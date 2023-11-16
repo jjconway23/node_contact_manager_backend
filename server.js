@@ -3,6 +3,8 @@ const dotenv = require('dotenv').config()
 const router = require('./routes/contact-routes')
 const app = express()
 
+
+app.use(express.json())
 app.use('/api/contacts', router)
 
 
