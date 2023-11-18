@@ -18,10 +18,15 @@ const createContact = asyncHandler(async (req,res)=> {
     if(!name || !email || !phone){
         res.status(400)
         throw new Error("All fields are mandatory !")
-    }else {
-        res.status(201).send('Create Contact')
-
     }
+    const contact = await Contact.create({
+        name,
+        email,
+        phone,
+    })
+    res.status(201).json(contact)
+
+    
 })
 
 //@desc Get contact
