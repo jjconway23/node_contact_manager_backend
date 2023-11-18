@@ -2,6 +2,9 @@ const express = require('express')
 const dotenv = require('dotenv').config()
 const router = require('./routes/contact-routes')
 const errorHandler = require('./middleware/errorhandler')
+const connectDb = require('./config/dbConnection')
+
+connectDb()
 const app = express()
 
 
